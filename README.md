@@ -1,1 +1,1 @@
-cg`s blog early for react
+cg`s blog  build with react

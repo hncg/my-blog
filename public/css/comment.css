@@ -1,0 +1,43 @@
+
+.commentForm textarea {
+  position: relative;
+  width:500px;
+}
+.commentForm .commentInput {
+    float: left;
+    width: 370px;
+    min-height: 20px;
+    overflow: hidden;
+    padding: 9px;
+    line-height: 20px;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius:2px;
+}
+.w-input-text {
+    border: 1px solid #cececf;
+    outline: none;
+}
+.w-submit {
+    float: right;
+    color: #fff;
+    text-shadow: -1px -1px 0px #779e00;
+
+}
+.commentSubmit {
+    float: right;
+    background-color: #779e00;
+    color: #fafafa;
+}
+.w-input-submit {
+    font-size: 16px;
+    text-shadow: -1px -1px 0px #779e00;
+    width: 104px;
+    height: 40px;
+    border: 0;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+    line-height: 40px;
+}
