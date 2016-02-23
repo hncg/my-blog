@@ -11,4 +11,6 @@
   make build
 
 
+ps: 后期会再引入([FLux][2])作为项目构建框架
 [1]: https://www.npmjs.com/
+[2]: http://facebook.github.io/flux/docs/todo-list.html
