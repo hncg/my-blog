@@ -1,11 +1,11 @@
-
-.commentForm textarea {
-  position: relative;
-  width:500px;
+.commentForm {
+    position: relative;
+    min-height: 40px;
+    margin-bottom: 20px;
 }
 .commentForm .commentInput {
     float: left;
-    width: 370px;
+    width: 373px;
     min-height: 20px;
     overflow: hidden;
     padding: 9px;
@@ -13,6 +13,8 @@
     word-wrap: break-word;
     word-break: break-all;
     border-radius:2px;
+    font-size: 12px;
+    background-color: #fff;
 }
 .w-input-text {
     border: 1px solid #cececf;
@@ -30,9 +32,9 @@
     color: #fafafa;
 }
 .w-input-submit {
-    font-size: 16px;
+    font-size: 12px;
     text-shadow: -1px -1px 0px #779e00;
-    width: 104px;
+    width: 100px;
     height: 40px;
     border: 0;
     text-align: center;
@@ -40,4 +42,36 @@
     margin: 0px;
     cursor: pointer;
     line-height: 40px;
+}
+.commentList {
+    position: relative;
+    margin: 10px 0px 10px 0px;
+    font-size: 12px;
+    color: #444;
+}
+
+.commentUser {
+    margin-right: 6px;
+}
+
+.commentBox {
+    width: 500px;
+    padding: 20px 90px;
+    margin: 2px 0px;
+    min-height: 40px;
+    background-color: #fafafa;
+}
+.commentList .comment {
+    text-align: left;
+    width: 100%;
+    margin: 10px 0px;
+    font-size: 12px;
+    line-height: 40px;
+    min-height: 40px;
+    border-bottom: 1px solid #e7e7e7
+}
+.commentUser a{
+    text-decoration: none;
+    color: #7594B3;
+
 }

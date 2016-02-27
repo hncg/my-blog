@@ -1,15 +1,18 @@
+function rawMarkup(txt) {
+  var rawMarkup = marked(txt, {sanitize: true});
+  return { __html: rawMarkup };
+};
+
 var Comment = React.createClass({
-  rawMarkup: function() {
-    var rawMarkup = marked(this.props.date.text.toString(), {sanitize: true});
-    return { __html: rawMarkup };
-  },
   render: function() {
     return (
       <div className="comment">
-        <h2 className="commentAuthor">
-          {this.props.date.author}
-        </h2>
-        <span dangerouslySetInnerHTML= {this.rawMarkup()} />
+        <span className="commentUser">
+          <a>{this.props.data.user_niker}</a>
+        </span>
+        <div dangerouslySetInnerHTML=rawMarkup({this.props.data.content})>
+          {}
+        </div>
       </div>
     );
   }
@@ -19,7 +22,7 @@ var CommentList = React.createClass({
   render: function() {
     var commentNodes = this.props.data.map(function(comment){
         return (
-            <Comment key={comment.id} date={comment} />
+            <Comment key={comment.id} data={comment} />
         );
     });
     return (
@@ -70,6 +73,50 @@ var CommentForm = React.createClass({
 });
 
 var CommentBox = React.createClass({
+    render: function() {
+        return (
+          <div className='commentBox'>
+              <CommentForm onCommentSubmit={this.handleCommentSubmit}/>
+              <CommentList data={this.props.data} />
+          </div>
+        );
+    }
+});
+
+var Article = React.createClass({
+  render: function() {
+      return (
+        <div className="ac">
+          <div className="article">
+            <h2 className='title'>
+              {this.props.data.title}
+            </h2>
+            <div className='text'>
+              {this.props.data.content}
+            </div>
+          </div>
+          <CommentBox  data={this.props.data.comment}/>
+        </div>
+        );
+  }
+});
+
+var ArticleList = React.createClass({
+  render: function() {
+    var articlesNodes = this.props.data.map(function(article){
+    return (
+            <Article key={article.id} data={article} />
+        );
+    });
+    return (
+      <div className='articleList'>
+        {articlesNodes}
+      </div>
+    );
+    }
+});
+
+var Blog = React.createClass({
     loadCommentsFromServer: function() {
       $.ajax({
             url: this.props.url,
@@ -84,7 +131,6 @@ var CommentBox = React.createClass({
           });
     },
     handleCommentSubmit: function(comment) {
-
       var comments = this.state.data;
       var newComments = comments.concat(comment);
       this.setState({data: newComments});
@@ -107,20 +153,18 @@ var CommentBox = React.createClass({
     },
     componentDidMount: function() {
         this.loadCommentsFromServer();
-        setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+        // setInterval(this.loadCommentsFromServer, this.props.pollInterval);
     },
-    render: function() {
-        return (
-            <div className='commentBox'>
-                <h1>Comments</h1>
-                <CommentList checked={true} data={this.state.data} />
-                <CommentForm onCommentSubmit={this.handleCommentSubmit}/>
-            </div>
-        );
-    }
+  render: function() {
+    return (
+      <div className='blog'>
+        <ArticleList data={this.state.data}/>
+      </div>
+      );
+  }
 });
-
 ReactDOM.render(
-  <CommentBox url='http://blog.cg.com/api/comment' pollInterval={60000}/>,
-  document.getElementById('content')
+  <Blog url='http://blog.cg.com/api/article' pollInterval={60000}/>,
+  document.getElementById('blogs')
 );
+

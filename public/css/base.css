@@ -1,18 +1,14 @@
 body {
-  background: #fff;
+  background: #ededef;
   font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.7;
   margin: 0;
   padding: 0px;
 
 }
 
-a {
-  color: #4183c4;
-  text-decoration: none;
-}
-
 a:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
