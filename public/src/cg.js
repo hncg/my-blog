@@ -193,6 +193,7 @@ var Blog = React.createClass({
                         } else if (scroll_auto == $(window)[0].scrollY) {
                             offset = limit * ++times;
                             remainder = this.test(url.format(offset));
+                            scroll_auto += 2;
                         }
                     }
             }
