@@ -1,4 +1,4 @@
-.article{
+.article {
     color:#737373;
     width: 500px;
     padding: 20px 90px;
@@ -8,5 +8,18 @@
     -moz-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
     -o-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
+}
 
+.article img {
+    max-width: 500px;
+    max-height: 600px;
+}
+
+#nothing {
+    font-size: 14px;
+    line-height: 1.7;
+    color:#737373;
+    min-height: 25px;
+    text-align: center;
+    margin-bottom: 20px;
 }
