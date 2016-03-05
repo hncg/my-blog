@@ -224,7 +224,7 @@ var Article = React.createClass({
             <div className='text' dangerouslySetInnerHTML={rawMarkup(this.props.data.content)}>
             </div>
           </div>
-          <CommentBox url='http://blog.cg.com/api/v1/user/1/comment' data={this.props.data.comment} parent_id={this.props.data.id}></CommentBox>
+          <CommentBox url='http://blog.che-cg.com/api/v1/user/1/comment' data={this.props.data.comment} parent_id={this.props.data.id}></CommentBox>
         </div>
         );
   }
@@ -314,13 +314,13 @@ var Blog = React.createClass({
       <div className='blog'>
         <ArticleList data={this.state.data}></ArticleList>
         <div id="nothing"></div>
-        <Login url='http://blog.cg.com/api/v1/login'></Login>
+        <Login url='http://blog.che-cg.com/api/v1/login'></Login>
       </div>
       );
   }
 });
 ReactDOM.render(
-  <Blog url='http://blog.cg.com/api/v1/user/1/article' ></Blog>,
+  <Blog url='http://blog.che-cg.com/api/v1/user/1/article' ></Blog>,
   document.getElementById('blogs')
 );
 
