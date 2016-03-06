@@ -15,6 +15,10 @@
     max-height: 600px;
 }
 
+pre {
+    overflow: scroll;
+}
+
 #nothing {
     font-size: 14px;
     line-height: 1.7;
