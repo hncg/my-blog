@@ -53,7 +53,7 @@ var Admin = React.createClass({
 });
 
 ReactDOM.render(
-  <Admin url='http://blog.che-cg.com/api/v1/user/1/article' pollInterval={60000}/>,
+  <Admin url='./api/v1/user/1/article' pollInterval={60000}/>,
   document.getElementById('admin')
 );
 
